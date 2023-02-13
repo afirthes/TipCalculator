@@ -20,6 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = vc
         self.window = window
         window.makeKeyAndVisible()
+        
+        
+//        for family in UIFont.familyNames.sorted() {
+//          let names = UIFont.fontNames(forFamilyName: family)
+//          print("Family: \(family) Font names: \(names)")
+//        }
     }
 
 

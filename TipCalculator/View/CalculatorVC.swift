@@ -29,7 +29,7 @@ class CalculatorVC: UIViewController {
         stackView.alignment = .fill
         
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom:16, right: 16)
     
         return stackView
     }()
@@ -50,11 +50,11 @@ class CalculatorVC: UIViewController {
 
     private func layoutViews() {
         
+        view.backgroundColor = ThemeColor.bg
         view.addSubview(vScrollView)
         
         vScrollView.snp.makeConstraints { make in
-//            make.edges.equalToSuperview()
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+            make.edges.equalTo(view.safeAreaLayoutGuide) //.inset(16)
         }
         
         vStackView.snp.makeConstraints { make in
