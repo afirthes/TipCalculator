@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class CalculatorVC: UIViewController {
     
@@ -14,12 +15,74 @@ class CalculatorVC: UIViewController {
     private let billInputView = BillingInputView()
     private let tipInputView = TipInputView()
     private let splitInputView = SplitInputView()
+    
+    private lazy var vStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [
+            logoView,
+            resultView,
+            billInputView,
+            tipInputView,
+            splitInputView
+        ])
+        stackView.axis = .vertical
+        stackView.spacing = 36
+        stackView.alignment = .fill
+        
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+    
+        return stackView
+    }()
+    
+    private lazy var vScrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.addSubview(vStackView)
+        scrollView.showsVerticalScrollIndicator = false
+        return scrollView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
+        
+        layoutViews()
     }
 
 
+    private func layoutViews() {
+        
+        view.addSubview(vScrollView)
+        
+        vScrollView.snp.makeConstraints { make in
+//            make.edges.equalToSuperview()
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        vStackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+            make.width.equalTo(vScrollView.snp.width)
+            
+        }
+        
+        logoView.snp.makeConstraints { make in
+            make.height.equalTo(48)
+        }
+
+        resultView.snp.makeConstraints { make in
+            make.height.equalTo(224)
+        }
+
+        billInputView.snp.makeConstraints { make in
+            make.height.equalTo(56)
+        }
+
+        tipInputView.snp.makeConstraints { make in
+            make.height.equalTo(56+56+16)
+        }
+
+        splitInputView.snp.makeConstraints { make in
+            make.height.equalTo(56)
+        }
+        
+    }
 }
 
