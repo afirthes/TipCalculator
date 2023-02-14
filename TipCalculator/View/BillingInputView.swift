@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Combine
+import CombineCocoa
 
 class BillingInputView: UIView {
     
@@ -58,9 +60,24 @@ class BillingInputView: UIView {
         return textField
     }()
     
+    private let billSubject: PassthroughSubject<Double, Never> = .init()
+    var valuePublisher: AnyPublisher<Double, Never> {
+        return billSubject.eraseToAnyPublisher()
+    }
+    private var cancellables = Set<AnyCancellable>()
+    
     init() {
         super.init(frame: .zero)
         layout()
+        observe()
+    }
+    
+    private func observe() {
+        textField.textPublisher.sink { [unowned self] text in
+            guard let text = text else { return }
+            billSubject.send(text.doubleValue ?? 0)
+//            print("Text: \(text)")
+        }.store(in: &cancellables)
     }
     
     required init?(coder: NSCoder) {

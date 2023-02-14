@@ -36,6 +36,8 @@
 		088C8C43299AEFB4000690D7 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C42299AEFB4000690D7 /* Data+Extension.swift */; };
 		088C8C46299B54E6000690D7 /* CalculatorVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C45299B54E6000690D7 /* CalculatorVM.swift */; };
 		088C8C48299B5612000690D7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C47299B5612000690D7 /* Result.swift */; };
+		088C8C4A299B70F5000690D7 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C49299B70F5000690D7 /* Double+Extension.swift */; };
+		088C8C4C299B7106000690D7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C4B299B7106000690D7 /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		088C8C42299AEFB4000690D7 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		088C8C45299B54E6000690D7 /* CalculatorVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVM.swift; sourceTree = "<group>"; };
 		088C8C47299B5612000690D7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		088C8C49299B70F5000690D7 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		088C8C4B299B7106000690D7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				088C8C44299B54D7000690D7 /* View Model */,
-				088C8C41299AE5F1000690D7 /* TipCalculator.entitlements */,
 				088C8C3C299ADF14000690D7 /* Model */,
 				088C8C35299A9808000690D7 /* Factory */,
 				088C8C31299A8EC0000690D7 /* Fonts */,
@@ -188,6 +191,7 @@
 			children = (
 				081814C12998C21700DC4C17 /* AppDelegate.swift */,
 				081814C32998C21700DC4C17 /* SceneDelegate.swift */,
+				088C8C41299AE5F1000690D7 /* TipCalculator.entitlements */,
 				081814CF2998C21A00DC4C17 /* Info.plist */,
 			);
 			path = Application;
@@ -223,6 +227,8 @@
 				088C8C2D299A8559000690D7 /* UIColor+Extension.swift */,
 				088C8C38299AA6B2000690D7 /* UIView+Extension.swift */,
 				088C8C42299AEFB4000690D7 /* Data+Extension.swift */,
+				088C8C49299B70F5000690D7 /* Double+Extension.swift */,
+				088C8C4B299B7106000690D7 /* String+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -416,12 +422,14 @@
 				081814C22998C21700DC4C17 /* AppDelegate.swift in Sources */,
 				088C8C2B299A850E000690D7 /* ThemeColor.swift in Sources */,
 				088C8C20299A58D9000690D7 /* ResultView.swift in Sources */,
+				088C8C4A299B70F5000690D7 /* Double+Extension.swift in Sources */,
 				088C8C1D299A5864000690D7 /* LogoView.swift in Sources */,
 				081814C42998C21700DC4C17 /* SceneDelegate.swift in Sources */,
 				088C8C22299A5942000690D7 /* BillingInputView.swift in Sources */,
 				088C8C26299A5964000690D7 /* SplitInputView.swift in Sources */,
 				088C8C30299A883C000690D7 /* ThemeFont.swift in Sources */,
 				088C8C37299A9813000690D7 /* LabelFactory.swift in Sources */,
+				088C8C4C299B7106000690D7 /* String+Extension.swift in Sources */,
 				088C8C3E299ADF20000690D7 /* Tip.swift in Sources */,
 				088C8C24299A5953000690D7 /* TipInputView.swift in Sources */,
 				088C8C2E299A8559000690D7 /* UIColor+Extension.swift in Sources */,
@@ -593,7 +601,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TipCalculator/TipCalculator.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TipCalculator/Application/TipCalculator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QQ5FDJWTRX;
@@ -621,7 +629,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TipCalculator/TipCalculator.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TipCalculator/Application/TipCalculator.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QQ5FDJWTRX;
