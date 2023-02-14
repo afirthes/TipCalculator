@@ -39,6 +39,7 @@
 		088C8C4A299B70F5000690D7 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C49299B70F5000690D7 /* Double+Extension.swift */; };
 		088C8C4C299B7106000690D7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C4B299B7106000690D7 /* String+Extension.swift */; };
 		088C8C4E299B7A97000690D7 /* UIResponder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C4D299B7A97000690D7 /* UIResponder+Extension.swift */; };
+		088C8C50299B862B000690D7 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C4F299B862B000690D7 /* Int+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		088C8C49299B70F5000690D7 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		088C8C4B299B7106000690D7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		088C8C4D299B7A97000690D7 /* UIResponder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Extension.swift"; sourceTree = "<group>"; };
+		088C8C4F299B862B000690D7 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 				088C8C49299B70F5000690D7 /* Double+Extension.swift */,
 				088C8C4B299B7106000690D7 /* String+Extension.swift */,
 				088C8C4D299B7A97000690D7 /* UIResponder+Extension.swift */,
+				088C8C4F299B862B000690D7 /* Int+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				088C8C30299A883C000690D7 /* ThemeFont.swift in Sources */,
 				088C8C37299A9813000690D7 /* LabelFactory.swift in Sources */,
 				088C8C4C299B7106000690D7 /* String+Extension.swift in Sources */,
+				088C8C50299B862B000690D7 /* Int+Extension.swift in Sources */,
 				088C8C3E299ADF20000690D7 /* Tip.swift in Sources */,
 				088C8C24299A5953000690D7 /* TipInputView.swift in Sources */,
 				088C8C2E299A8559000690D7 /* UIColor+Extension.swift in Sources */,

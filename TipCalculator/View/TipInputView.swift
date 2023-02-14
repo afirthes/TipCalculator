@@ -82,7 +82,7 @@ class TipInputView: UIView {
     }()
     
     
-    private let tipSubject = CurrentValueSubject<Tip, Never>(.none)
+    private let tipSubject:CurrentValueSubject<Tip, Never> = .init(.none)
     public var valuePublisher: AnyPublisher<Tip, Never> {
         return tipSubject.eraseToAnyPublisher()
     }
