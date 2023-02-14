@@ -38,6 +38,7 @@
 		088C8C48299B5612000690D7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C47299B5612000690D7 /* Result.swift */; };
 		088C8C4A299B70F5000690D7 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C49299B70F5000690D7 /* Double+Extension.swift */; };
 		088C8C4C299B7106000690D7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C4B299B7106000690D7 /* String+Extension.swift */; };
+		088C8C4E299B7A97000690D7 /* UIResponder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C4D299B7A97000690D7 /* UIResponder+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		088C8C47299B5612000690D7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		088C8C49299B70F5000690D7 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		088C8C4B299B7106000690D7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		088C8C4D299B7A97000690D7 /* UIResponder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 				088C8C42299AEFB4000690D7 /* Data+Extension.swift */,
 				088C8C49299B70F5000690D7 /* Double+Extension.swift */,
 				088C8C4B299B7106000690D7 /* String+Extension.swift */,
+				088C8C4D299B7A97000690D7 /* UIResponder+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				088C8C20299A58D9000690D7 /* ResultView.swift in Sources */,
 				088C8C4A299B70F5000690D7 /* Double+Extension.swift in Sources */,
 				088C8C1D299A5864000690D7 /* LogoView.swift in Sources */,
+				088C8C4E299B7A97000690D7 /* UIResponder+Extension.swift in Sources */,
 				081814C42998C21700DC4C17 /* SceneDelegate.swift in Sources */,
 				088C8C22299A5942000690D7 /* BillingInputView.swift in Sources */,
 				088C8C26299A5964000690D7 /* SplitInputView.swift in Sources */,
