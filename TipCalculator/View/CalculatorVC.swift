@@ -31,7 +31,7 @@ class CalculatorVC: UIViewController {
         
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom:16, right: 16)
-    
+        
         return stackView
     }()
     
@@ -44,7 +44,7 @@ class CalculatorVC: UIViewController {
     
     private let vm = CalculatorVM()
     private var canncelables = Set<AnyCancellable>()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,14 +53,14 @@ class CalculatorVC: UIViewController {
     }
     
     private func bind() {
-//        
-//        billInputView.valuePublisher.sink { bill in
-//            print("bill \(bill)")
-//        }.store(in: &canncelables)
+
+        // billInputView.valuePublisher.sink { bill in
+        //     print("bill \(bill)")
+        // }.store(in: &canncelables)
         
         let input = CalculatorVM.Input(
             billPublisher: billInputView.valuePublisher,
-            tipPublisher: Just(.tenPercent).eraseToAnyPublisher(),
+            tipPublisher: tipInputView.valuePublisher,
             splitPublisher: Just(5).eraseToAnyPublisher())
         
         let output = vm.transform(input: input)
@@ -69,8 +69,8 @@ class CalculatorVC: UIViewController {
             print(result)
         }.store(in: &canncelables)
     }
-
-
+    
+    
     private func layoutViews() {
         
         view.backgroundColor = ThemeColor.bg
@@ -89,19 +89,19 @@ class CalculatorVC: UIViewController {
         logoView.snp.makeConstraints { make in
             make.height.equalTo(48)
         }
-
+        
         resultView.snp.makeConstraints { make in
             make.height.equalTo(224)
         }
-
+        
         billInputView.snp.makeConstraints { make in
             make.height.equalTo(56)
         }
-
+        
         tipInputView.snp.makeConstraints { make in
             make.height.equalTo(56+56+16)
         }
-
+        
         splitInputView.snp.makeConstraints { make in
             make.height.equalTo(56)
         }

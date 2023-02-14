@@ -12,7 +12,7 @@ import CombineCocoa
 class BillingInputView: UIView {
     
     private let headerView: HeaderView = {
-       let view = HeaderView()
+        let view = HeaderView()
         view.configure(topText: "Enter", bottomText: "your bill")
         
         return view
@@ -76,7 +76,7 @@ class BillingInputView: UIView {
         textField.textPublisher.sink { [unowned self] text in
             guard let text = text else { return }
             billSubject.send(text.doubleValue ?? 0)
-//            print("Text: \(text)")
+            // print("Text: \(text)")
         }.store(in: &cancellables)
     }
     
@@ -85,7 +85,7 @@ class BillingInputView: UIView {
     }
     
     private func layout() {
-
+        
         [headerView, textFieldContainerView].forEach(addSubview(_:))
         
         headerView.snp.makeConstraints { make in
