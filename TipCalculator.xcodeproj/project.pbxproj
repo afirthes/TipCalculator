@@ -34,6 +34,8 @@
 		088C8C3E299ADF20000690D7 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C3D299ADF20000690D7 /* Tip.swift */; };
 		088C8C40299ADF4E000690D7 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C3F299ADF4E000690D7 /* HeaderView.swift */; };
 		088C8C43299AEFB4000690D7 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C42299AEFB4000690D7 /* Data+Extension.swift */; };
+		088C8C46299B54E6000690D7 /* CalculatorVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C45299B54E6000690D7 /* CalculatorVM.swift */; };
+		088C8C48299B5612000690D7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C47299B5612000690D7 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		088C8C3F299ADF4E000690D7 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		088C8C41299AE5F1000690D7 /* TipCalculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TipCalculator.entitlements; sourceTree = "<group>"; };
 		088C8C42299AEFB4000690D7 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		088C8C45299B54E6000690D7 /* CalculatorVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVM.swift; sourceTree = "<group>"; };
+		088C8C47299B5612000690D7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 		081814C02998C21700DC4C17 /* TipCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				088C8C44299B54D7000690D7 /* View Model */,
 				088C8C41299AE5F1000690D7 /* TipCalculator.entitlements */,
 				088C8C3C299ADF14000690D7 /* Model */,
 				088C8C35299A9808000690D7 /* Factory */,
@@ -244,8 +249,17 @@
 			isa = PBXGroup;
 			children = (
 				088C8C3D299ADF20000690D7 /* Tip.swift */,
+				088C8C47299B5612000690D7 /* Result.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		088C8C44299B54D7000690D7 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				088C8C45299B54E6000690D7 /* CalculatorVM.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +410,7 @@
 			files = (
 				088C8C3B299AC06F000690D7 /* AmountView.swift in Sources */,
 				088C8C43299AEFB4000690D7 /* Data+Extension.swift in Sources */,
+				088C8C48299B5612000690D7 /* Result.swift in Sources */,
 				088C8C1E299A58AC000690D7 /* CalculatorVC.swift in Sources */,
 				088C8C39299AA6B2000690D7 /* UIView+Extension.swift in Sources */,
 				081814C22998C21700DC4C17 /* AppDelegate.swift in Sources */,
@@ -410,6 +425,7 @@
 				088C8C3E299ADF20000690D7 /* Tip.swift in Sources */,
 				088C8C24299A5953000690D7 /* TipInputView.swift in Sources */,
 				088C8C2E299A8559000690D7 /* UIColor+Extension.swift in Sources */,
+				088C8C46299B54E6000690D7 /* CalculatorVM.swift in Sources */,
 				088C8C40299ADF4E000690D7 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
