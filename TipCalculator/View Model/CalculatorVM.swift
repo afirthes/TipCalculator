@@ -22,6 +22,11 @@ class CalculatorVM {
     }
 
     private var cancellables = Set<AnyCancellable>()
+    private var audioPlayerService: AudioPlayerService
+    
+    init(audioPlayerService: AudioPlayerService = DefaultAudoPlayer()) {
+        self.audioPlayerService = audioPlayerService
+    }
 
     func transform(input: Input) -> Output {
         let updateViewPublisher = Publishers
@@ -42,7 +47,16 @@ class CalculatorVM {
                 return Just(result)
             }.eraseToAnyPublisher()
         
-        let resetCalculatorPublisher = input.logoViewTapPublisher
+        let resetCalculatorPublisher = input
+            .logoViewTapPublisher
+            .handleEvents(receiveOutput:  { [unowned self] _ in
+                
+                print("playing sound")
+            audioPlayerService.playSound()
+                
+        }).flatMap {
+            return Just($0)
+        }.eraseToAnyPublisher()
 
         return Output(updateViewPublisher: updateViewPublisher,
                       resetCalculatorPublisher: resetCalculatorPublisher)

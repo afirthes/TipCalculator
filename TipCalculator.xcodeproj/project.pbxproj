@@ -19,6 +19,8 @@
 		081814F92998C75B00DC4C17 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 081814F82998C75B00DC4C17 /* CombineCocoa */; };
 		081814FF2998C84900DC4C17 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 081814FE2998C84900DC4C17 /* SnapshotTesting */; };
 		081815012998C86300DC4C17 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 081815002998C86300DC4C17 /* CombineCocoa */; };
+		081B018329A3D51300DEAC1C /* click.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 081B018229A3D51300DEAC1C /* click.m4a */; };
+		081B018629A3D54400DEAC1C /* AudioPlayerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081B018529A3D54400DEAC1C /* AudioPlayerService.swift */; };
 		084F94F6299E7CC000CE5E60 /* TokenDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F94F5299E7CC000CE5E60 /* TokenDetails.swift */; };
 		084F94F8299E800200CE5E60 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F94F7299E800200CE5E60 /* Persistence.swift */; };
 		084F94FB299E80A100CE5E60 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 084F94F9299E80A100CE5E60 /* Model.xcdatamodeld */; };
@@ -77,6 +79,8 @@
 		081814DE2998C21A00DC4C17 /* TipCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		081814E22998C21A00DC4C17 /* TipCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculatorUITests.swift; sourceTree = "<group>"; };
 		081814E42998C21A00DC4C17 /* TipCalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		081B018229A3D51300DEAC1C /* click.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = click.m4a; sourceTree = "<group>"; };
+		081B018529A3D54400DEAC1C /* AudioPlayerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerService.swift; sourceTree = "<group>"; };
 		084F94F5299E7CC000CE5E60 /* TokenDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenDetails.swift; sourceTree = "<group>"; };
 		084F94F7299E800200CE5E60 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		084F94FA299E80A100CE5E60 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 		081814C02998C21700DC4C17 /* TipCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				081B018429A3D53600DEAC1C /* Service */,
+				081B018129A3D50000DEAC1C /* Resources */,
 				088C8C44299B54D7000690D7 /* View Model */,
 				088C8C3C299ADF14000690D7 /* Model */,
 				088C8C35299A9808000690D7 /* Factory */,
@@ -199,6 +205,22 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		081B018129A3D50000DEAC1C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				081B018229A3D51300DEAC1C /* click.m4a */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		081B018429A3D53600DEAC1C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				081B018529A3D54400DEAC1C /* AudioPlayerService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		088C8C1A299A568F000690D7 /* Application */ = {
@@ -409,6 +431,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				081B018329A3D51300DEAC1C /* click.m4a in Resources */,
 				081814CE2998C21A00DC4C17 /* LaunchScreen.storyboard in Resources */,
 				081814CB2998C21A00DC4C17 /* Assets.xcassets in Resources */,
 			);
@@ -447,6 +470,7 @@
 				088C8C20299A58D9000690D7 /* ResultView.swift in Sources */,
 				088C8C4A299B70F5000690D7 /* Double+Extension.swift in Sources */,
 				088C8C1D299A5864000690D7 /* LogoView.swift in Sources */,
+				081B018629A3D54400DEAC1C /* AudioPlayerService.swift in Sources */,
 				088C8C4E299B7A97000690D7 /* UIResponder+Extension.swift in Sources */,
 				084F94FB299E80A100CE5E60 /* Model.xcdatamodeld in Sources */,
 				081814C42998C21700DC4C17 /* SceneDelegate.swift in Sources */,
