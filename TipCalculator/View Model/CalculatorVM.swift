@@ -51,7 +51,6 @@ class CalculatorVM {
             .logoViewTapPublisher
             .handleEvents(receiveOutput:  { [unowned self] _ in
                 
-                print("playing sound")
             audioPlayerService.playSound()
                 
         }).flatMap {
