@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct TipResult {
     let amountPerPerson: Double
     let totalBill: Double

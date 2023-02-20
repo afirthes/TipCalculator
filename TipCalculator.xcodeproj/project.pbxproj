@@ -19,6 +19,11 @@
 		081814F92998C75B00DC4C17 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 081814F82998C75B00DC4C17 /* CombineCocoa */; };
 		081814FF2998C84900DC4C17 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 081814FE2998C84900DC4C17 /* SnapshotTesting */; };
 		081815012998C86300DC4C17 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 081815002998C86300DC4C17 /* CombineCocoa */; };
+		084F94F6299E7CC000CE5E60 /* TokenDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F94F5299E7CC000CE5E60 /* TokenDetails.swift */; };
+		084F94F8299E800200CE5E60 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F94F7299E800200CE5E60 /* Persistence.swift */; };
+		084F94FB299E80A100CE5E60 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 084F94F9299E80A100CE5E60 /* Model.xcdatamodeld */; };
+		084F94FD299E864100CE5E60 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F94FC299E864100CE5E60 /* NotificationCenter.swift */; };
+		084F94FF299E881200CE5E60 /* PushNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084F94FE299E881200CE5E60 /* PushNotifications.swift */; };
 		088C8C1D299A5864000690D7 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C1C299A5864000690D7 /* LogoView.swift */; };
 		088C8C1E299A58AC000690D7 /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081814C52998C21700DC4C17 /* CalculatorVC.swift */; };
 		088C8C20299A58D9000690D7 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C1F299A58D9000690D7 /* ResultView.swift */; };
@@ -35,7 +40,7 @@
 		088C8C40299ADF4E000690D7 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C3F299ADF4E000690D7 /* HeaderView.swift */; };
 		088C8C43299AEFB4000690D7 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C42299AEFB4000690D7 /* Data+Extension.swift */; };
 		088C8C46299B54E6000690D7 /* CalculatorVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C45299B54E6000690D7 /* CalculatorVM.swift */; };
-		088C8C48299B5612000690D7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C47299B5612000690D7 /* Result.swift */; };
+		088C8C48299B5612000690D7 /* TipResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C47299B5612000690D7 /* TipResult.swift */; };
 		088C8C4A299B70F5000690D7 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C49299B70F5000690D7 /* Double+Extension.swift */; };
 		088C8C4C299B7106000690D7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C4B299B7106000690D7 /* String+Extension.swift */; };
 		088C8C4E299B7A97000690D7 /* UIResponder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088C8C4D299B7A97000690D7 /* UIResponder+Extension.swift */; };
@@ -72,6 +77,11 @@
 		081814DE2998C21A00DC4C17 /* TipCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		081814E22998C21A00DC4C17 /* TipCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculatorUITests.swift; sourceTree = "<group>"; };
 		081814E42998C21A00DC4C17 /* TipCalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		084F94F5299E7CC000CE5E60 /* TokenDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenDetails.swift; sourceTree = "<group>"; };
+		084F94F7299E800200CE5E60 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		084F94FA299E80A100CE5E60 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		084F94FC299E864100CE5E60 /* NotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
+		084F94FE299E881200CE5E60 /* PushNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushNotifications.swift; sourceTree = "<group>"; };
 		088C8C1C299A5864000690D7 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		088C8C1F299A58D9000690D7 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		088C8C21299A5942000690D7 /* BillingInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingInputView.swift; sourceTree = "<group>"; };
@@ -91,7 +101,7 @@
 		088C8C41299AE5F1000690D7 /* TipCalculator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TipCalculator.entitlements; sourceTree = "<group>"; };
 		088C8C42299AEFB4000690D7 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		088C8C45299B54E6000690D7 /* CalculatorVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVM.swift; sourceTree = "<group>"; };
-		088C8C47299B5612000690D7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		088C8C47299B5612000690D7 /* TipResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipResult.swift; sourceTree = "<group>"; };
 		088C8C49299B70F5000690D7 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		088C8C4B299B7106000690D7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		088C8C4D299B7A97000690D7 /* UIResponder+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Extension.swift"; sourceTree = "<group>"; };
@@ -131,6 +141,7 @@
 		081814B52998C21700DC4C17 = {
 			isa = PBXGroup;
 			children = (
+				084F94F9299E80A100CE5E60 /* Model.xcdatamodeld */,
 				081814C02998C21700DC4C17 /* TipCalculator */,
 				081814D72998C21A00DC4C17 /* TipCalculatorTests */,
 				081814E12998C21A00DC4C17 /* TipCalculatorUITests */,
@@ -193,6 +204,9 @@
 		088C8C1A299A568F000690D7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				084F94FC299E864100CE5E60 /* NotificationCenter.swift */,
+				084F94F7299E800200CE5E60 /* Persistence.swift */,
+				084F94FE299E881200CE5E60 /* PushNotifications.swift */,
 				081814C12998C21700DC4C17 /* AppDelegate.swift */,
 				081814C32998C21700DC4C17 /* SceneDelegate.swift */,
 				088C8C41299AE5F1000690D7 /* TipCalculator.entitlements */,
@@ -260,8 +274,9 @@
 		088C8C3C299ADF14000690D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				084F94F5299E7CC000CE5E60 /* TokenDetails.swift */,
 				088C8C3D299ADF20000690D7 /* Tip.swift */,
-				088C8C47299B5612000690D7 /* Result.swift */,
+				088C8C47299B5612000690D7 /* TipResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -420,17 +435,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				084F94FF299E881200CE5E60 /* PushNotifications.swift in Sources */,
 				088C8C3B299AC06F000690D7 /* AmountView.swift in Sources */,
 				088C8C43299AEFB4000690D7 /* Data+Extension.swift in Sources */,
-				088C8C48299B5612000690D7 /* Result.swift in Sources */,
+				088C8C48299B5612000690D7 /* TipResult.swift in Sources */,
 				088C8C1E299A58AC000690D7 /* CalculatorVC.swift in Sources */,
 				088C8C39299AA6B2000690D7 /* UIView+Extension.swift in Sources */,
 				081814C22998C21700DC4C17 /* AppDelegate.swift in Sources */,
 				088C8C2B299A850E000690D7 /* ThemeColor.swift in Sources */,
+				084F94FD299E864100CE5E60 /* NotificationCenter.swift in Sources */,
 				088C8C20299A58D9000690D7 /* ResultView.swift in Sources */,
 				088C8C4A299B70F5000690D7 /* Double+Extension.swift in Sources */,
 				088C8C1D299A5864000690D7 /* LogoView.swift in Sources */,
 				088C8C4E299B7A97000690D7 /* UIResponder+Extension.swift in Sources */,
+				084F94FB299E80A100CE5E60 /* Model.xcdatamodeld in Sources */,
 				081814C42998C21700DC4C17 /* SceneDelegate.swift in Sources */,
 				088C8C22299A5942000690D7 /* BillingInputView.swift in Sources */,
 				088C8C26299A5964000690D7 /* SplitInputView.swift in Sources */,
@@ -439,7 +457,9 @@
 				088C8C4C299B7106000690D7 /* String+Extension.swift in Sources */,
 				088C8C50299B862B000690D7 /* Int+Extension.swift in Sources */,
 				088C8C3E299ADF20000690D7 /* Tip.swift in Sources */,
+				084F94F8299E800200CE5E60 /* Persistence.swift in Sources */,
 				088C8C24299A5953000690D7 /* TipInputView.swift in Sources */,
+				084F94F6299E7CC000CE5E60 /* TokenDetails.swift in Sources */,
 				088C8C2E299A8559000690D7 /* UIColor+Extension.swift in Sources */,
 				088C8C46299B54E6000690D7 /* CalculatorVM.swift in Sources */,
 				088C8C40299ADF4E000690D7 /* HeaderView.swift in Sources */,
@@ -831,6 +851,19 @@
 			productName = CombineCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		084F94F9299E80A100CE5E60 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				084F94FA299E80A100CE5E60 /* Model.xcdatamodel */,
+			);
+			currentVersion = 084F94FA299E80A100CE5E60 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 081814B62998C21700DC4C17 /* Project object */;
 }

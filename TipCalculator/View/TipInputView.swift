@@ -5,46 +5,45 @@
 //  Created by Afir Thes on 13.02.2023.
 //
 
-import UIKit
 import Combine
 import CombineCocoa
+import UIKit
 
 class TipInputView: UIView {
-    
     private let headerView: HeaderView = {
         let view = HeaderView()
         view.configure(topText: "Choose", bottomText: "your tip")
         return view
     }()
-    
+
     private lazy var tenPercentTipButton: UIButton = {
         let button = buildTipButton(tip: .tenPercent)
-        button.tapPublisher.flatMap ({ () in
+        button.tapPublisher.flatMap { () in
             Just(Tip.tenPercent)
-        }).assign(to: \.value, on: tipSubject)
+        }.assign(to: \.value, on: tipSubject)
             .store(in: &cancellables)
-        
+
         return button
     }()
-    
+
     private lazy var fifteenPercentTipButton: UIButton = {
         let button = buildTipButton(tip: .fifteenPercent)
-        button.tapPublisher.flatMap ({ () in
+        button.tapPublisher.flatMap { () in
             Just(Tip.fifteenPercent)
-        }).assign(to: \.value, on: tipSubject)
+        }.assign(to: \.value, on: tipSubject)
             .store(in: &cancellables)
         return button
     }()
-    
+
     private lazy var twentyPercentTipButton: UIButton = {
         let button = buildTipButton(tip: .twentyPercent)
-        button.tapPublisher.flatMap ({ () in
+        button.tapPublisher.flatMap { () in
             Just(Tip.twentyPercent)
-        }).assign(to: \.value, on: tipSubject)
+        }.assign(to: \.value, on: tipSubject)
             .store(in: &cancellables)
         return button
     }()
-    
+
     private lazy var customTipButton: UIButton = {
         let button = UIButton()
         button.setTitle("Custom tip", for: .normal)
@@ -57,119 +56,118 @@ class TipInputView: UIView {
         }.store(in: &cancellables)
         return button
     }()
-    
+
     private lazy var buttonHStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
             tenPercentTipButton,
             fifteenPercentTipButton,
-            twentyPercentTipButton
+            twentyPercentTipButton,
         ])
         stackView.distribution = .fillEqually
         stackView.spacing = 16
         stackView.axis = .horizontal
         return stackView
     }()
-    
+
     private lazy var buttonVStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
             buttonHStackView,
-            customTipButton
+            customTipButton,
         ])
         stackView.axis = .vertical
         stackView.spacing = 16
         stackView.distribution = .fillEqually
         return stackView
     }()
-    
-    
-    private let tipSubject:CurrentValueSubject<Tip, Never> = .init(.none)
+
+    private let tipSubject: CurrentValueSubject<Tip, Never> = .init(.none)
     public var valuePublisher: AnyPublisher<Tip, Never> {
-        return tipSubject.eraseToAnyPublisher()
+        tipSubject.eraseToAnyPublisher()
     }
-    
+
     private var cancellables = Set<AnyCancellable>()
-    
-    
+
     init() {
         super.init(frame: .zero)
         layout()
         observe()
     }
-    
-    required init?(coder: NSCoder) {
+
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func layout() {
-        
         [headerView, buttonVStackView].forEach(addSubview(_:))
-        
+
         buttonVStackView.snp.makeConstraints { make in
             make.top.bottom.trailing.equalToSuperview()
-            
         }
-        
+
         headerView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
             make.trailing.equalTo(buttonVStackView.snp.leading).offset(-24)
             make.width.equalTo(68)
             make.centerY.equalTo(buttonHStackView.snp.centerY)
         }
-        
     }
-    
+
     private func handleCustomTipButton() {
         let alertController: UIAlertController = {
-            let controller = UIAlertController (
+            let controller = UIAlertController(
                 title: "Enter custom tip",
                 message: nil,
-                preferredStyle: .alert)
-            
+                preferredStyle: .alert
+            )
+
             controller.addTextField { textField in
                 textField.placeholder = "Make it generous!"
                 textField.keyboardType = .numberPad
                 textField.autocorrectionType = .no
             }
-            
+
             let cancelAction = UIAlertAction(
                 title: "Cancel",
-                style: .cancel)
-            
+                style: .cancel
+            )
+
             let okActiokn = UIAlertAction(
                 title: "Ok",
-                style: .default) { [weak self] _ in
-                    guard let text = controller.textFields?.first?.text, let value = Int(text) else { return }
-                    self?.tipSubject.send(.custom(value: value))
-                }
-            
+                style: .default
+            ) { [weak self] _ in
+                guard let text = controller.textFields?.first?.text, let value = Int(text) else { return }
+                self?.tipSubject.send(.custom(value: value))
+            }
+
             [okActiokn, cancelAction].forEach(controller.addAction(_:))
             return controller
         }()
-        
+
         parentViewController?.present(alertController, animated: true)
     }
-    
+
     private func resetView() {
         [
             tenPercentTipButton,
             fifteenPercentTipButton,
             twentyPercentTipButton,
-            customTipButton
+            customTipButton,
         ].forEach { button in
             button.backgroundColor = ThemeColor.primary
         }
-        
+
         let text = NSMutableAttributedString(string: "Custom tip", attributes: [
-            .font: ThemeFont.bold(ofSize: 20)
+            .font: ThemeFont.bold(ofSize: 20),
         ])
         customTipButton.setAttributedTitle(text, for: .normal)
     }
-    
+
     private func observe() {
         tipSubject.sink { [unowned self] tip in
-            
+
             resetView()
-            
+
             switch tip {
             case .none: break
             case .tenPercent:
@@ -178,36 +176,36 @@ class TipInputView: UIView {
                 fifteenPercentTipButton.backgroundColor = ThemeColor.secondary
             case .twentyPercent:
                 twentyPercentTipButton.backgroundColor = ThemeColor.secondary
-            case .custom(let value):
+            case let .custom(value):
                 customTipButton.backgroundColor = ThemeColor.secondary
                 let text = NSMutableAttributedString(
                     string: "$\(value)",
                     attributes: [
-                        .font: ThemeFont.bold(ofSize: 20)
-                    ])
+                        .font: ThemeFont.bold(ofSize: 20),
+                    ]
+                )
                 text.addAttributes([
-                    .font: ThemeFont.bold(ofSize: 14)
+                    .font: ThemeFont.bold(ofSize: 14),
                 ], range: NSMakeRange(0, 1))
                 customTipButton.setAttributedTitle(text, for: .normal)
             }
         }.store(in: &cancellables)
     }
-    
+
     private func buildTipButton(tip: Tip) -> UIButton {
         let button = UIButton(type: .custom)
-        
+
         button.backgroundColor = ThemeColor.primary
         button.addCornerRaius(radius: 8.0)
         let text = NSMutableAttributedString(string: tip.stringValue, attributes: [
             .font: ThemeFont.bold(ofSize: 20),
-            .foregroundColor: UIColor.white
+            .foregroundColor: UIColor.white,
         ])
         text.addAttributes([
-            .font: ThemeFont.demibold(ofSize: 14)
+            .font: ThemeFont.demibold(ofSize: 14),
         ], range: NSMakeRange(2, 1))
         button.setAttributedTitle(text, for: .normal)
-        
+
         return button
     }
 }
-

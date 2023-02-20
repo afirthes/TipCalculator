@@ -7,9 +7,7 @@
 
 import UIKit
 
-
 extension UIView {
-    
     func addShadow(offset: CGSize, color: UIColor, radius: CGFloat, opacity: Float) {
         layer.cornerRadius = radius
         layer.masksToBounds = false
@@ -21,16 +19,14 @@ extension UIView {
         backgroundColor = nil
         layer.backgroundColor = backgroundCGColor
     }
-    
+
     func addCornerRaius(radius: CGFloat) {
         layer.masksToBounds = false
         layer.cornerRadius = radius
     }
-    
+
     func addRoundecCornerds(corners: CACornerMask, radius: CGFloat) {
         layer.cornerRadius = radius
         layer.maskedCorners = [corners]
     }
-    
-    
 }
