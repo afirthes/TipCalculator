@@ -15,7 +15,7 @@ class CalculatorVC: UIViewController {
     private let billInputView = BillingInputView()
     private let tipInputView = TipInputView()
     private let splitInputView = SplitInputView()
-
+    
     private lazy var vStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
             logoView,
@@ -27,20 +27,20 @@ class CalculatorVC: UIViewController {
         stackView.axis = .vertical
         stackView.spacing = 36
         stackView.alignment = .fill
-
+        
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-
+        
         return stackView
     }()
-
+    
     private lazy var vScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.addSubview(vStackView)
         scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
-
+    
     private let vm = CalculatorVM()
     private var canncelables = Set<AnyCancellable>()
     
@@ -61,10 +61,10 @@ class CalculatorVC: UIViewController {
             Just(())
         }.eraseToAnyPublisher()
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         layoutViews()
         bind()
         observe()
@@ -75,7 +75,7 @@ class CalculatorVC: UIViewController {
             view.endEditing(true)
         }.store(in: &canncelables)
     }
-
+    
     private func bind() {
         let input = CalculatorVM.Input(
             billPublisher: billInputView.valuePublisher,
@@ -83,47 +83,64 @@ class CalculatorVC: UIViewController {
             splitPublisher: splitInputView.valuePublisher,
             logoViewTapPublisher: logoViewTabPublisher
         )
-
+        
         let output = vm.transform(input: input)
-
+        
         output.updateViewPublisher.sink { [unowned self] result in
             resultView.configure(result: result)
         }.store(in: &canncelables)
         
-        output.resetCalculatorPublisher.sink { _ in
-            print("Clear form please")
+        output.resetCalculatorPublisher.sink { [unowned self] _ in
+            billInputView.reset()
+            tipInputView.reset()
+            splitInputView.reset()
+            
+            UIView.animate(
+                withDuration: 0.1,
+                delay: 0,
+                usingSpringWithDamping: 5.0,
+                initialSpringVelocity: 0.5,
+                options: .curveEaseInOut) {
+                    self.logoView.transform = .init(scaleX: 1.5, y: 1.5)
+                } completion: { _ in
+                    UIView.animate(withDuration: 0.1) {
+                        self.logoView.transform = .identity
+                    }
+                }
+            
+            
         }.store(in: &canncelables)
     }
-
+    
     private func layoutViews() {
         view.backgroundColor = ThemeColor.bg
         view.addSubview(vScrollView)
-
+        
         vScrollView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
-
+        
         vStackView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
             make.width.equalTo(vScrollView.snp.width)
         }
-
+        
         logoView.snp.makeConstraints { make in
             make.height.equalTo(48)
         }
-
+        
         resultView.snp.makeConstraints { make in
             make.height.equalTo(224)
         }
-
+        
         billInputView.snp.makeConstraints { make in
             make.height.equalTo(56)
         }
-
+        
         tipInputView.snp.makeConstraints { make in
             make.height.equalTo(56 + 56 + 16)
         }
-
+        
         splitInputView.snp.makeConstraints { make in
             make.height.equalTo(56)
         }

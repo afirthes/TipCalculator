@@ -86,6 +86,11 @@ class BillingInputView: UIView {
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func reset() {
+        textField.text = nil
+        billSubject.send(0)
+    }
 
     private func layout() {
         [headerView, textFieldContainerView].forEach(addSubview(_:))
