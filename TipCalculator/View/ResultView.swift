@@ -65,7 +65,6 @@ class ResultView: UIView {
     private lazy var hStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
             totalBillView,
-//            UIView(),
             totalTipView,
         ])
         stackView.axis = .horizontal

@@ -74,23 +74,24 @@ class CalculatorVC: UIViewController {
         viewTabPublisher.sink { [unowned self] _ in
             view.endEditing(true)
         }.store(in: &canncelables)
-        
-        logoViewTabPublisher.sink { [unowned self] _ in
-            print("Logo tapped")
-        }.store(in: &canncelables)
     }
 
     private func bind() {
         let input = CalculatorVM.Input(
             billPublisher: billInputView.valuePublisher,
             tipPublisher: tipInputView.valuePublisher,
-            splitPublisher: splitInputView.valuePublisher
+            splitPublisher: splitInputView.valuePublisher,
+            logoViewTapPublisher: logoViewTabPublisher
         )
 
         let output = vm.transform(input: input)
 
         output.updateViewPublisher.sink { [unowned self] result in
             resultView.configure(result: result)
+        }.store(in: &canncelables)
+        
+        output.resetCalculatorPublisher.sink { _ in
+            print("Clear form please")
         }.store(in: &canncelables)
     }
 
@@ -99,7 +100,7 @@ class CalculatorVC: UIViewController {
         view.addSubview(vScrollView)
 
         vScrollView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide) // .inset(16)
+            make.edges.equalTo(view.safeAreaLayoutGuide)
         }
 
         vStackView.snp.makeConstraints { make in
