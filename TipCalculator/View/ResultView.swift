@@ -65,7 +65,7 @@ class ResultView: UIView {
     private lazy var hStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [
             totalBillView,
-            UIView(),
+//            UIView(),
             totalTipView,
         ])
         stackView.axis = .horizontal
@@ -84,7 +84,8 @@ class ResultView: UIView {
     }
     
     func configure(result: TipResult) {
-        let text = NSMutableAttributedString(string: String(result.amountPerPerson), attributes: [
+        let text = NSMutableAttributedString(
+            string: result.amountPerPerson.currencyFormatted, attributes: [
             .font: ThemeFont.bold(ofSize: 48)
         ])
         
@@ -94,8 +95,8 @@ class ResultView: UIView {
         
         amountPerPersonLabel.attributedText = text
         
-        totalBillView.configure(text: String(result.totalBill))
-        totalTipView.configure(text: String(result.totalTip))
+        totalBillView.configure(amount: result.totalBill )
+        totalTipView.configure(amount: result.totalTip )
     }
 
     private func layout() {

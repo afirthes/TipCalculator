@@ -31,8 +31,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     func application(_: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) async -> UIBackgroundFetchResult {
         guard
             let text = userInfo["text"] as? String,
-            let image = userInfo["image"] as? String,
-            let url = URL(string: image)
+            let image = userInfo["image"] as? String
         else {
             return .noData
         }

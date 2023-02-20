@@ -54,8 +54,8 @@ class AmountView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(text: String) {
-        let text = NSMutableAttributedString(string: text,
+    func configure(amount: Double) {
+        let text = NSMutableAttributedString(string: amount.currencyFormatted,
         attributes: [
             .font: ThemeFont.bold(ofSize: 24)
         ])
